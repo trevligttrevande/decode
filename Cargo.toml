@@ -1,0 +1,24 @@
+[package]
+authors = ["Martin"]
+categories = ["embedded", "no-std"]
+description = "The decode progrma I've written way too many times now."
+keywords = ["arm", "cortex-m", "template"]
+license = "MIT OR Apache-2.0"
+name = "decode"
+version = "0.1.0"
+
+[dependencies]
+cortex-m = "0.3.0"
+cortex-m-semihosting = "0.2.0"
+
+[dependencies.cortex-m-rt]
+features = ["abort-on-panic"]
+version = "0.3.3"
+
+[dependencies.stm32f40x]
+features = ["rt"] # see comment above
+git = "https://gitlab.henriktjader.com/pln/STM32F40x"
+
+[profile.release]
+debug = true
+lto = true
